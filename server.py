@@ -23,6 +23,7 @@ def handle_client(conn, addr):
             if msg == DISCONNECT_MSG:
                 connected = False
             print("{} said {}".format(addr, msg))
+            conn.send("Msg received".encode(FORMAT))
 
     conn.close()
 def start():
